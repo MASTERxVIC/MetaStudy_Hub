@@ -1,0 +1,68 @@
+body {
+    margin: 0;
+    background-color: #0d4459;
+    overflow: hidden;
+    font-family: 'quick', Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+  }
+  #startPage {
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    background: #87ceeb; /* Light blue background*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    border-radius: 50% 30%;
+  }
+  .text{
+    transition: transform 0.5s ease; 
+  }
+  #startPage:hover .text{
+    transform: scale(1.5);
+  }
+  canvas {
+    display: none; /* Hide the canvas initially */
+  }
+  #laptop {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80%;
+    background: white;
+    display: none;
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+  }
+  #closeLaptop {
+    position: absolute;
+    width: 40px; 
+    height: 40px;; 
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    transition: transform 0.5s ease; /* Ensure smooth transition on transform */
+  }
+  
+  #closeLaptop:hover {
+    transform: scale(1.5); /* Scale up the button when hovered */
+  }
+  
+  
+
+  @font-face {
+    font-family: "quick"; /* Name of the font family */
+    src: url("./font/Quickstarter-Font/Quick\ Starter.ttf") format("truetype"); /* URL to the font file */
+  }  
+
+  
