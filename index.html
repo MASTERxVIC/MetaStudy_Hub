@@ -11,113 +11,48 @@
   <div id="startPage">
     <div class="text" id="launchMeta">Launch Meta</div>
   </div>
-
+ 
   <!-- Laptop Interface -->
   <div id="laptop">
     <h1>Streams & Subjects</h1>
   
-    <div class="stream">
-      <h2>BE/BTech</h2>
-      <select class="subjects-dropdown">
-        <option value="Mathematics">Mathematics</option>
-        <option value="Physics">Physics</option>
-        <option value="Computer Science">Computer Science</option>
-      </select>
-    </div>
+    <!-- Dropdown for selecting streams -->
+    <select id="stream-dropdown" style="display:none;">
+      <option value="BE/BTech">BE/BTech</option>
+      <option value="BCA">BCA</option>
+      <option value="BSc-CS">BSc-CS</option>
+      <option value="Bpharma">Bpharma</option>
+      <option value="DPharma">DPharma</option>
+      <option value="Polytechnic Diploma">Polytechnic Diploma</option>
+      <option value="BBA">BBA</option>
+      <option value="BSc(PCM or PCB)">BSc(PCM or PCB)</option>
+      <option value="BA">BA</option>
+      <option value="BCOM">BCOM</option>
+      <option value="BALLB">BALLB</option>
+    </select>
   
-    <div class="stream">
-      <h2>BCA</h2>
-      <select class="subjects-dropdown">
-        <option value="Mathematics">Mathematics</option>
-        <option value="Programming">Programming</option>
-        <option value="Database Systems">Database Systems</option>
-      </select>
-    </div>
-  
-    <div class="stream">
-      <h2>BSc-CS</h2>
-      <select class="subjects-dropdown">
-        <option value="Computer Science">Computer Science</option>
-        <option value="Mathematics">Mathematics</option>
-        <option value="Physics">Physics</option>
-      </select>
-    </div>
-  
-    <div class="stream">
-      <h2>Bpharma</h2>
-      <select class="subjects-dropdown">
-        <option value="Pharmacology">Pharmacology</option>
-        <option value="Chemistry">Chemistry</option>
-        <option value="Biology">Biology</option>
-      </select>
-    </div>
-  
-    <div class="stream">
-      <h2>DPharma</h2>
-      <select class="subjects-dropdown">
-        <option value="Pharmacy">Pharmacy</option>
-        <option value="Biochemistry">Biochemistry</option>
-        <option value="Microbiology">Microbiology</option>
-      </select>
-    </div>
-  
-    <div class="stream">
-      <h2>Polytechnic Diploma</h2>
-      <select class="subjects-dropdown">
-        <option value="Mechanical Engineering">Mechanical Engineering</option>
-        <option value="Electrical Engineering">Electrical Engineering</option>
-        <option value="Civil Engineering">Civil Engineering</option>
-      </select>
-    </div>
-  
-    <div class="stream">
-      <h2>BBA</h2>
-      <select class="subjects-dropdown">
-        <option value="Management">Management</option>
-        <option value="Marketing">Marketing</option>
-        <option value="Finance">Finance</option>
-      </select>
-    </div>
-  
-    <div class="stream">
-      <h2>BSc (PCM or PCB)</h2>
-      <select class="subjects-dropdown">
-        <option value="Physics">Physics</option>
-        <option value="Chemistry">Chemistry</option>
-        <option value="Mathematics">Mathematics</option>
-      </select>
-    </div>
-  
-    <div class="stream">
-      <h2>BA</h2>
-      <select class="subjects-dropdown">
-        <option value="History">History</option>
-        <option value="Political Science">Political Science</option>
-        <option value="English Literature">English Literature</option>
-      </select>
-    </div>
-  
-    <div class="stream">
-      <h2>BCOM</h2>
-      <select class="subjects-dropdown">
-        <option value="Economics">Economics</option>
-        <option value="Accountancy">Accountancy</option>
-        <option value="Business Studies">Business Studies</option>
-      </select>
-    </div>
-  
-    <div class="stream">
-      <h2>BALLB</h2>
-      <select class="subjects-dropdown">
-        <option value="Law">Law</option>
-        <option value="Legal Studies">Legal Studies</option>
-        <option value="Constitutional Law">Constitutional Law</option>
-      </select>
+    <!-- Div to display subjects dynamically based on selected stream -->
+    <div id="subjects-container" style="display:none;">
+      <!-- Subjects will be populated here based on selected stream -->
     </div>
   
     <img id="closeLaptop" src="https://img.icons8.com/ios-glyphs/30/multiply.png" alt="multiply"/>
   </div>
+  <script src="./server/server.js"></script>
+   
+  <div id="floating_icon" class="floating_icon">
+    💬
+  </div>
   
+  <div id="chat-box" >
+    <div id="chat-messages"></div>
+    <div style="display: flex; align-items: center; padding: 5px;">
+      <input id="chat-input" type="text" placeholder="Type a message...">
+      <button id="send-btn">Send</button>
+    </div>
+  </div>
+
+    
 
   <script type="module" src="main.js"></script>
 </body>
