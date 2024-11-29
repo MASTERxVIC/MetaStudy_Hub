@@ -1,0 +1,12 @@
+/* Webfont: Sunsive-Black */@font-face {
+    font-family: 'SunsiveBlack';
+    src: url('Sunsive-Black.eot'); /* IE9 Compat Modes */
+    src: url('Sunsive-Black.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('Sunsive-Black.woff') format('woff'), /* Modern Browsers */
+         url('Sunsive-Black.woff2') format('woff2'), /* Modern Browsers */
+         url('Sunsive-Black.ttf') format('truetype'); /* Safari, Android, iOS */
+             font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+

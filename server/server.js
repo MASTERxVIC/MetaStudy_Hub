@@ -24,7 +24,6 @@ io.on('connection', (socket) => {
         console.log(`${username} joined with color ${color}`);
 
         // Notify all players of the new player
-        io.emit('update-players', players);
         io.emit('chat-message', {
             user: 'GameBot',
             message: `${username} has joined the chat!`,
@@ -49,7 +48,6 @@ io.on('connection', (socket) => {
             console.log(`${player.username} disconnected`);
             players = players.filter((p) => p.id !== socket.id);
 
-            io.emit('update-players', players);
             io.emit('chat-message', {
                 user: 'GameBot',
                 message: `${player.username} has left the chat.`,
@@ -61,6 +59,6 @@ io.on('connection', (socket) => {
 
 // Start the server
 const PORT = 3000;
-server.listen(PORT, () =>
-    console.log(`Server running on http://localhost:${PORT}`)
-);
+server.listen(PORT, () => {
+    console.log(`Server running on http://localhost:${PORT}`);
+});

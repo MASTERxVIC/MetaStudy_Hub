@@ -80,9 +80,12 @@ function onMouseClick(event) {
 }
 
 window.addEventListener('click', onMouseClick);
+///------------------------------------------------------------------------------------///
+
+///------------------------------------------------------------------------------------///
 
 // UI Interaction Logic
-const startPage = document.getElementById('startPage');
+// const startPage = document.getElementById('startPage');
 const launchMeta = document.getElementById('launchMeta');
 const laptopDiv = document.getElementById('laptop');
 const closeLaptopButton = document.getElementById('closeLaptop');
@@ -155,55 +158,205 @@ function animate() {
   renderer.render(scene, camera);
 }
 
-// Laptop Stream and Subject Dropdown Logic
+
+//--------------------------------------------------------------------//
+
+// 
 function onLaptopClick() {
   // Show stream dropdown and subjects container
   const streamDropdown = document.getElementById('stream-dropdown');
   const subjectsContainer = document.getElementById('subjects-container');
-  
+
   streamDropdown.style.display = 'block';
-  subjectsContainer.style.display = 'block';
 
   // Add event listener to the stream dropdown
-  streamDropdown.addEventListener('change', function() {
+  streamDropdown.addEventListener('change', function () {
     const selectedStream = this.value;
-    // Clear previous subjects
-    subjectsContainer.innerHTML = '';
 
-    // Define the subjects for each stream
+    // Clear previous content in the subjects container
+    renderSubjectsContainer(selectedStream);
+  });
+
+  function renderSubjectsContainer(selectedStream) {
     const streamSubjects = {
-      'BE/BTech': ['Mathematics', 'Physics', 'Computer Science'],
-      'BCA': ['Mathematics', 'Programming', 'Database Systems'],
-      'BSc-CS': ['Computer Science', 'Mathematics', 'Physics'],
-      'Bpharma': ['Pharmacology', 'Chemistry', 'Biology'],
-      'DPharma': ['Pharmacy', 'Biochemistry', 'Microbiology'],
-      'Polytechnic Diploma': ['Mechanical Engineering', 'Electrical Engineering', 'Civil Engineering'],
-      'BBA': ['Management', 'Marketing', 'Finance'],
-      'BSc(PCM or PCB)': ['Physics', 'Chemistry', 'Mathematics'],
-      'BA': ['History', 'Political Science', 'English Literature'],
-      'BCOM': ['Economics', 'Accountancy', 'Business Studies'],
-      'BALLB': ['Law', 'Legal Studies', 'Constitutional Law']
+      'BE/BTech': {
+        subjects: ['Mathematics', 'Physics', 'Computer Science'],
+        syllabus: {
+          Mathematics: ['Calculus', 'Linear Algebra', 'Probability', 'Differential Equations'],
+          Physics: ['Mechanics', 'Thermodynamics', 'Electromagnetism', 'Modern Physics'],
+          'Computer Science': ['Data Structures', 'Algorithms', 'Operating Systems', 'Networking'],
+        },
+      },
+      'BCA': {
+        subjects: ['Mathematics', 'Programming', 'Database Systems'],
+        syllabus: {
+          Mathematics: ['Discrete Mathematics', 'Probability', 'Statistics'],
+          Programming: ['C++', 'Java', 'Python', 'Web Development'],
+          'Database Systems': ['SQL', 'Database Design', 'Normalization', 'Transactions'],
+        },
+      },
+        'BSc-CS': {
+          subjects: ['Computer Science', 'Mathematics', 'Physics'],
+          syllabus: {
+            'Computer Science': ['Programming in C', 'Data Structures', 'Operating Systems', 'Software Engineering'],
+            Mathematics: ['Linear Algebra', 'Calculus', 'Statistics', 'Discrete Mathematics'],
+            Physics: ['Mechanics', 'Electronics', 'Quantum Physics', 'Thermodynamics'],
+          },
+        },
+        'Bpharma': {
+          subjects: ['Pharmaceutics', 'Pharmacology', 'Pharmaceutical Chemistry', 'Pharmacognosy'],
+          syllabus: {
+            Pharmaceutics: ['Pharmaceutical Formulations', 'Biopharmaceutics', 'Drug Delivery Systems', 'Pharmaceutical Technology'],
+            Pharmacology: ['Pathophysiology', 'Pharmacokinetics', 'Drug Interactions', 'Toxicology'],
+            'Pharmaceutical Chemistry': ['Medicinal Chemistry', 'Analytical Techniques', 'Organic Chemistry', 'Biochemistry'],
+            Pharmacognosy: ['Herbal Medicine', 'Plant Identification', 'Phytochemistry', 'Natural Products'],
+          },
+        },
+        'DPharma': {
+          subjects: ['Pharmacy Practice', 'Pharmaceutical Chemistry', 'Pharmacognosy', 'Human Anatomy and Physiology'],
+          syllabus: {
+            'Pharmacy Practice': ['Dispensing Pharmacy', 'Pharmaceutical Jurisprudence', 'Hospital Pharmacy', 'Community Pharmacy'],
+            'Pharmaceutical Chemistry': ['Inorganic Chemistry', 'Organic Chemistry', 'Physical Chemistry', 'Medicinal Chemistry'],
+            Pharmacognosy: ['Basic Pharmacognosy', 'Natural Sources of Drugs', 'Herbal Products', 'Plant-Based Medicine'],
+            'Human Anatomy and Physiology': ['Cell Structure', 'Body Systems', 'Physiology of Organs', 'Basic Pathology'],
+          },
+        },
+        'Polytechnic Diploma': {
+          subjects: ['Mechanical Engineering', 'Electrical Engineering', 'Civil Engineering'],
+          syllabus: {
+            'Mechanical Engineering': ['Engineering Mechanics', 'Thermodynamics', 'Machine Design', 'Manufacturing Processes'],
+            'Electrical Engineering': ['Circuit Theory', 'Electrical Machines', 'Power Systems', 'Control Systems'],
+            'Civil Engineering': ['Surveying', 'Building Materials', 'Structural Analysis', 'Transportation Engineering'],
+          },
+        },
+        'BBA': {
+          subjects: ['Management', 'Marketing', 'Finance'],
+          syllabus: {
+            Management: ['Principles of Management', 'Organizational Behavior', 'Business Ethics', 'Strategic Management'],
+            Marketing: ['Market Research', 'Digital Marketing', 'Consumer Behavior', 'Brand Management'],
+            Finance: ['Financial Accounting', 'Corporate Finance', 'Investment Analysis', 'Financial Markets'],
+          },
+        },
+        'BSc(PCM or PCB)': {
+          subjects: ['Physics', 'Chemistry', 'Mathematics', 'Biology'],
+          syllabus: {
+            Physics: ['Mechanics', 'Optics', 'Electromagnetism', 'Nuclear Physics'],
+            Chemistry: ['Organic Chemistry', 'Inorganic Chemistry', 'Physical Chemistry', 'Analytical Techniques'],
+            Mathematics: ['Calculus', 'Linear Algebra', 'Probability', 'Differential Equations'],
+            Biology: ['Cell Biology', 'Genetics', 'Human Anatomy', 'Ecology'],
+          },
+        },
+        'BA': {
+          subjects: ['History', 'Political Science', 'English Literature'],
+          syllabus: {
+            History: ['Ancient History', 'Medieval History', 'Modern History', 'World History'],
+            'Political Science': ['Political Theory', 'Indian Constitution', 'International Relations', 'Public Administration'],
+            'English Literature': ['Shakespeare', 'Romantic Poetry', 'Modern Prose', 'Literary Criticism'],
+          },
+        },
+        'BCOM': {
+          subjects: ['Accountancy', 'Economics', 'Business Studies'],
+          syllabus: {
+            Accountancy: ['Financial Accounting', 'Cost Accounting', 'Auditing', 'Taxation'],
+            Economics: ['Microeconomics', 'Macroeconomics', 'Econometrics', 'Development Economics'],
+            'Business Studies': ['Business Communication', 'Corporate Governance', 'Entrepreneurship', 'International Business'],
+          },
+        },
+        'BALLB': {
+          subjects: ['Law', 'Legal Studies', 'Constitutional Law'],
+          syllabus: {
+            Law: ['Contract Law', 'Criminal Law', 'Tort Law', 'Family Law'],
+            'Legal Studies': ['Jurisprudence', 'Legal Research', 'Human Rights Law', 'Environmental Law'],
+            'Constitutional Law': ['Indian Constitution', 'Fundamental Rights', 'Judicial Review', 'Separation of Powers'],
+          },
+        },
+      
+      // Add other streams and their syllabus here...
     };
 
-    // Create a dropdown for the subjects of the selected stream
-    const selectSubject = document.createElement('select');
-    selectSubject.classList.add('subjects-dropdown');
+    const selectedStreamData = streamSubjects[selectedStream];
+    subjectsContainer.innerHTML = '';
 
-    // Add an option for each subject based on the selected stream
-    const subjects = streamSubjects[selectedStream];
-    subjects.forEach(subject => {
-      const option = document.createElement('option');
-      option.value = subject;
-      option.textContent = subject;
-      selectSubject.appendChild(option);
+    if (selectedStreamData) {
+      // Create a back button to return to stream selection
+      const backButton = document.createElement('img');
+      backButton.src = './back-left.png';
+      backButton.alt = 'back';
+      backButton.classList.add('backButton'); // Add CSS class
+
+      backButton.addEventListener('click', () => {
+        subjectsContainer.style.display = 'none';
+        streamDropdown.value = ''; // Reset dropdown
+        streamDropdown.style.display = 'block';
+      });
+
+      subjectsContainer.appendChild(backButton);
+
+      // Display subjects as clickable options
+      selectedStreamData.subjects.forEach(subject => {
+        const subjectButton = document.createElement('button');
+        subjectButton.textContent = subject;
+        subjectButton.style.display = 'block' ;
+        subjectButton.style.margin = '10px 0';
+        subjectButton.style.padding = '10px';
+        subjectButton.style.border = '1px solid #ccc';
+        subjectButton.style.background = '#f9f9f9';
+        subjectButton.style.cursor = 'pointer';
+        subjectButton.style.borderRadius = '5px';
+
+        // Add click event to display syllabus for the selected subject
+        subjectButton.addEventListener('click', () => {
+          renderSyllabusContainer(selectedStream, subject, streamSubjects);
+        });
+
+        subjectsContainer.appendChild(subjectButton);
+      });
+    } else {
+      const noSubjects = document.createElement('p');
+      noSubjects.textContent = 'No subjects available for this stream.';
+      subjectsContainer.appendChild(noSubjects);
+    }
+
+    subjectsContainer.style.display = 'block';
+  }
+
+  function renderSyllabusContainer(selectedStream, subject, streamSubjects) {
+    subjectsContainer.innerHTML = '';
+
+    // Create a back button to return to the subjects list
+    const backButton = document.createElement('img');
+    backButton.src = './back-left.png';
+    backButton.alt = 'back';
+    backButton.classList.add('backButton'); // Add CSS class
+
+    backButton.addEventListener('click', () => {
+      renderSubjectsContainer(selectedStream);
     });
 
-    // Append the subjects dropdown to the container
-    subjectsContainer.appendChild(selectSubject);
-  });
+    subjectsContainer.appendChild(backButton);
+
+    // Display syllabus
+    const syllabusList = document.createElement('div');
+    syllabusList.innerHTML = `
+      <h3>${subject} Syllabus</h3>
+      <ul>
+        ${streamSubjects[selectedStream].syllabus[subject]
+          .map(topic => `<li>${topic}</li>`)
+          .join('')}
+      </ul>
+    `;
+
+    subjectsContainer.appendChild(syllabusList);
+ 
+    subjectsContainer.style.display = 'block';
+  }
+ 
 }
+//---------------------------------------------------------------------//
 
 
+
+//--------------------------------------------------------------------//
 
 // Function to add the team member's name
 const textGroup = new THREE.Group(); // Create a group to hold all text meshes
@@ -214,7 +367,7 @@ function addTeamMemberName(name, offsetX, offsetY, offsetZ) {
   fontLoader.load('https://threejs.org/examples/fonts/helvetiker_regular.typeface.json', (font) => {
     const textGeometry = new TextGeometry(name, {
       font: font,
-      size: 0.3,
+      size: 0.2,
       height: 0.06,
     });
 
@@ -231,7 +384,7 @@ function addTeamMemberName(name, offsetX, offsetY, offsetZ) {
     textMesh.position.set(offsetX, offsetY, offsetZ); // Adjust the position here
 
     // Apply a 180-degree rotation around the X-axis
-    textMesh.rotation.x = Math.PI / -2; // 180 degrees in radians (rotate to sleep on the ground)
+    textMesh.rotation.x = Math.PI / -3; // 180 degrees in radians (rotate to sleep on the ground)
 
     // Add textMesh to the group
     textGroup.add(textMesh);
@@ -240,11 +393,11 @@ function addTeamMemberName(name, offsetX, offsetY, offsetZ) {
 
 // Adjusted vertical positions for reduced gap
 addTeamMemberName("Dev Bhardwaj", 2, 0, -6);
-addTeamMemberName("Raj Bhardwaj", 2, 0, -5.3);  // Reduced gap
-addTeamMemberName("Ashutosh Yadav", 2, 0, -4.5);
-addTeamMemberName("Mohd Saalim", 2, 0, -3.8);  // Reduced gap
-addTeamMemberName("Ankit Sharma", 2, 0, -3.1);
-addTeamMemberName("Atul Kumar", 2, 0, -2.4);  // Reduced gap
+addTeamMemberName("Raj Bhardwaj", 2, 0, -5);  // Reduced gap
+addTeamMemberName("Ashutosh Yadav", 2, 0, -4);
+addTeamMemberName("Mohd Saalim", 2, 0, -3);  // Reduced gap
+addTeamMemberName("Ankit Sharma", 2, 0, -2);
+addTeamMemberName("Atul Kumar", 2, 0, -1);  // Reduced gap
 
 // After all names are added, you can position the entire group
 textGroup.position.set(2, -0.35, 6);  // Move the whole group
@@ -252,72 +405,60 @@ textGroup.rotation.y = Math.PI / 2;  // Rotate the whole group
 scene.add(textGroup);
 
 
-const floatingIcon = document.getElementById('floating_icon'); // Floating chat icon
-const chatBox = document.getElementById('chat-box'); // Chat box container
-const sendBtn = document.getElementById('send-btn'); // Send button
-const chatMessages = document.getElementById('chat-messages'); // Chat messages container
-const chatInput = document.getElementById('chat-input'); // Input for user messages
+//--------------------------------------------------------------------//
+  
+// // Connect to the Socket.IO server
+// const socket = io();
+//   // UI Elements
+//   const floatingIcon = document.getElementById('floating-icon');
+//   const chatContainer = document.getElementById('chat-box');
+//   const chatMessages = document.getElementById('chat-messages');
+//   const chatInput = document.getElementById('chat-input');
+//   const sendBtn = document.getElementById('send-btn');
 
-// Socket.IO setup
-const socket = io(); // Connect to the server
+//   // Store username and color
+//   let username = null;
+//   let color = null;
 
-let username = null; // Username placeholder
-let color = null; // Color for the user
+//   // Show chat container on floating icon click
+//   floatingIcon.addEventListener('click', () => {
+//       chatContainer.style.display = 'block';
+//       floatingIcon.style.display = 'none';
 
-// Function to initialize user on clicking the floating icon
-floatingIcon.addEventListener('click', () => {
-    if (!username) {
-        // Prompt for username if not already set
-        username = prompt("Enter your username:");
-        while (!username || username.trim() === "") {
-            username = prompt("Username cannot be empty. Enter your username:");
-        }
-        username = username.trim();
+//       // Ask for username once when chat opens
+//       if (!username) {
+//           username = prompt("Enter your username:");
+//           while (!username || username.trim() === "") {
+//               username = prompt("Enter your username:");
+//           }
+//           username = username.trim();
+//           color = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 
-        // Assign a random color for the user
-        color = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+//           // Notify the server of the new user
+//           socket.emit('join', { username, color });
+//       }
+//   });
 
-        // Notify the server about the new user
-        socket.emit('join', { username, color });
+//   // Send a message
+//   sendBtn.addEventListener('click', () => {
+//       const message = chatInput.value.trim();
+//       if (message) {
+//           socket.emit('send-message', { message, username, color });
+//           chatInput.value = ''; // Clear input field
+//       }
+//   });
 
-        alert(`Welcome, ${username}! You can start chatting now.`);
-    }
+//   // Send message on Enter key
+//   chatInput.addEventListener('keypress', (event) => {
+//       if (event.key === 'Enter') sendBtn.click();
+//   });
 
-    // Toggle chat box visibility
-    chatBox.style.display = chatBox.style.display === 'none' || chatBox.style.display === '' ? 'flex' : 'none';
-});
+//   // Display chat messages
+//   socket.on('chat-message', ({ user, message, color }) => {
+//       const messageDiv = document.createElement('div');
+//       messageDiv.innerHTML = `<strong style="color: ${color}">${user}:</strong> ${message}`;
+//       chatMessages.appendChild(messageDiv);
+//       chatMessages.scrollTop = chatMessages.scrollHeight; // Auto-scroll
+//   });
 
-// Send a message when the send button is clicked
-sendBtn.addEventListener('click', () => {
-    const message = chatInput.value.trim();
-    if (message !== '') {
-        // Emit the message to the server
-        socket.emit('send-message', { message, username, color });
 
-        chatInput.value = ''; // Clear input
-    }
-});
-
-// Send message on "Enter" key press
-chatInput.addEventListener('keypress', (event) => {
-    if (event.key === 'Enter') {
-        sendBtn.click();
-    }
-});
-
-// Display incoming messages
-socket.on('chat-message', (data) => {
-    const { user, message, color } = data;
-
-    const messageDiv = document.createElement('div');
-    messageDiv.innerHTML = `<strong style="color: ${color}">${user}:</strong> ${message}`;
-    chatMessages.appendChild(messageDiv);
-
-    // Auto-scroll to the latest message
-    chatMessages.scrollTop = chatMessages.scrollHeight;
-});
-
-// Log connected players when updated
-socket.on('update-players', (players) => {
-    console.log('Connected Players:', players);
-});

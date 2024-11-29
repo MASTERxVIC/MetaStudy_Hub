@@ -7,11 +7,13 @@
   <title>MetaStudy Hub</title>
 </head>
 <body>
+
   <!-- Start Page -->
   <div id="startPage">
     <div class="text" id="launchMeta">Launch Meta</div>
   </div>
  
+  
   <!-- Laptop Interface -->
   <div id="laptop">
     <h1>Streams & Subjects</h1>
@@ -32,14 +34,15 @@
     </select>
   
     <!-- Div to display subjects dynamically based on selected stream -->
-    <div id="subjects-container" style="display:none;">
+    <div id="subjects-container" style="display:none;" >
       <!-- Subjects will be populated here based on selected stream -->
     </div>
   
-    <img id="closeLaptop" src="https://img.icons8.com/ios-glyphs/30/multiply.png" alt="multiply"/>
+    <img id="closeLaptop" src="./cross.png" alt="multiply"/>
+    
+    
   </div>
-  <script src="./server/server.js"></script>
-   
+  
   <div id="floating_icon" class="floating_icon">
     💬
   </div>
@@ -52,8 +55,8 @@
     </div>
   </div>
 
-    
-
+  
+  <script src="/socket.io/socket.io.js"></script>
   <script type="module" src="main.js"></script>
 </body>
 </html>

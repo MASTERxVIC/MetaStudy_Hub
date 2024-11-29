@@ -1,0 +1,12 @@
+/* Webfont: Sunsive-Medium */@font-face {
+    font-family: 'SunsiveMed';
+    src: url('Sunsive-Medium.eot'); /* IE9 Compat Modes */
+    src: url('Sunsive-Medium.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('Sunsive-Medium.woff') format('woff'), /* Modern Browsers */
+         url('Sunsive-Medium.woff2') format('woff2'), /* Modern Browsers */
+         url('Sunsive-Medium.ttf') format('truetype'); /* Safari, Android, iOS */
+             font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
