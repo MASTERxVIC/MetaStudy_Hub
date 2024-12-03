@@ -1,0 +1,47 @@
+// Three.js Setup
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+const renderer = new THREE.WebGLRenderer();
+renderer.setSize(window.innerWidth, window.innerHeight);
+document.body.appendChild(renderer.domElement);
+
+camera.position.z = 5;
+
+// Add a simple bot model (Sphere for example)
+const botGeometry = new THREE.SphereGeometry(1, 32, 32);
+const botMaterial = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+const bot = new THREE.Mesh(botGeometry, botMaterial);
+scene.add(bot);
+
+// Raycaster for detecting clicks
+const raycaster = new THREE.Raycaster();
+const mouse = new THREE.Vector2();
+
+// Toggle chat box visibility function
+const toggleChatBox = () => {
+    const chatBox = document.getElementById('chat-box');
+    chatBox.style.display = chatBox.style.display === 'none' || chatBox.style.display === '' ? 'flex' : 'none';
+};
+
+// Event listener for mouse clicks
+window.addEventListener('click', (event) => {
+    // Convert mouse position to normalized device coordinates (-1 to +1 range)
+    mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+    mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+
+    // Update the raycaster with the camera and mouse position
+    raycaster.setFromCamera(mouse, camera);
+
+    // Check for intersections with the bot
+    const intersects = raycaster.intersectObject(bot);
+    if (intersects.length > 0) {
+        toggleChatBox(); // Toggle the chat box if the bot is clicked
+    }
+});
+
+// Animation loop
+function animate() {
+    requestAnimationFrame(animate);
+    renderer.render(scene, camera);
+}
+animate();

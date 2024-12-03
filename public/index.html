@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <title>MetaStudy Hub</title>
+</head>
+<body>
+
+  <!-- Start Page -->
+  <div id="startPage">
+    <div class="text" id="launchMeta">Launch Meta</div>
+  </div>
+ 
+  
+  
+  <div id="laptop">
+    <h1>Streams & Subjects</h1>
+  
+    
+    <select id="stream-dropdown" style="display:none;">
+      <option value="BE/BTech">BE/BTech</option>
+      <option value="BCA">BCA</option>
+      <option value="BSc-CS">BSc-CS</option>
+      <option value="Bpharma">Bpharma</option>
+      <option value="DPharma">DPharma</option>
+      <option value="Polytechnic Diploma">Polytechnic Diploma</option>
+      <option value="BBA">BBA</option>
+      <option value="BSc(PCM or PCB)">BSc(PCM or PCB)</option>
+      <option value="BA">BA</option>
+      <option value="BCOM">BCOM</option>
+      <option value="BALLB">BALLB</option>
+    </select>
+  
+   
+    <div id="subjects-container" style="display:none;"></div>
+  
+    <img id="closeLaptop" src="./cross.png" alt="multiply"/>
+  </div>
+  
+  
+    <!-- Chat Box -->
+    <div class="chat-box" id="chat-box">
+      <div class="chat-header">Meta Study Hub Chat</div>
+      <div class="chat-messages" id="chat-messages"></div>
+      <div class="chat-controls">
+          <input type="text" id="chat-input" class="chat-input" placeholder="Type a message...">
+          <button id="send-btn" class="send-btn">Send</button>
+      </div>
+  </div>
+
+  
+  <script src="/socket.io/socket.io.js"></script>
+  <script type="module" src="main.js"></script>
+</body>
+</html>
