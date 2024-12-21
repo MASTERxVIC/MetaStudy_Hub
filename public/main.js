@@ -4,6 +4,30 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { FontLoader } from 'three/examples/jsm/loaders/FontLoader.js';
 import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry.js';
 
+
+ // Login logic
+ const loginContainer = document.getElementById('login-container');
+ const threejsContainer = document.getElementById('threejs-container');
+ const loginBtn = document.getElementById('login-btn');
+
+ loginBtn.addEventListener('click', () => {
+   const username = document.getElementById('username').value;
+   const password = document.getElementById('password').value;
+
+   if (username && password) {
+     // Simulate login validation (you can add actual backend validation here)
+     if (username === 'admin' && password === '1234') {
+       alert('Login successful!');
+       loginContainer.style.display = 'none'; // Hide the login page
+       threejsContainer.style.display = 'block'; // Show the Three.js scene
+       initThreeJS(); // Initialize Three.js content
+     } else {
+       alert('Invalid username or password!');
+     }
+   } else {
+     alert('Please enter both username and password!');
+   }
+ });
 // Scene setup
 const scene = new THREE.Scene();
 
@@ -35,6 +59,8 @@ scene.add(hemiLight);
 const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
 scene.add(ambientLight);
 
+
+
 // GLTF Loader for models
 const loader = new GLTFLoader();
 let baseModel, originalModel, laptopModel , botModel;
@@ -65,6 +91,14 @@ loader.load('./base.glb', (glb) => {
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true;
 controls.dampingFactor = 0.05;
+
+// Set camera movement restrictions
+controls.maxPolarAngle = Math.PI / 2; // Prevent looking below the horizon
+controls.addEventListener('change', () => {
+  if (camera.position.y < -2) {
+    camera.position.y = -2; // Restrict vertical movement below base
+  }
+});
 
 // Raycaster for detecting clicks
 const raycaster = new THREE.Raycaster();
