@@ -1,111 +1,187 @@
+/* Reset and General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
   margin: 0;
-  background-image: linear-gradient(-225deg, #FF057C 0%, #8D0B93 50%, #321575 100%);
-  overflow: hidden;
+  padding: 0;
   font-family: "sun", Arial, sans-serif;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}   
-
-#login-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.8);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #fff;
-  font-family: Arial, sans-serif;
-  z-index: 9999;
-}
-
-#login-form {
-  width: 500px;
-  height: 400px;
-  background: #333;
-  padding: 20px;
-  border-radius: 30px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-#login-form input[type="text"], #login-form input[type="password"] {
-  width: 100%;
-  margin-bottom: 10px;
-  padding: 10px;
-  border: none;
-  border-radius: 4px;
-}
-
-#login-form button {
-  width: 100%;
-  padding: 10px;
-  background: #007bff;
-  border: none;
-  border-radius: 4px;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-#login-form button:hover {
-  background: #0056b3;
-}
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #000000, #0b0b0d);
+  overflow: hidden;
+  color: #fff;
+  position: relative;
 }
-.card {
-  background-color: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 300px;
+
+/* Blue Glow Effect */
+body::before {
+  content: "";
+  position: absolute;
+  top: -200px;
+  left: -200px;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(183, 0, 255, 0.9), rgba(0, 0, 0, 0));
+  z-index: 0;
+  filter: blur(150px);
+  animation: pulse 2s infinite ease-in-out;
+}
+body.no-background {
+  background: #000; /* Plain black background */
+}
+
+body.no-background::before {
+  content: none; /* Hide the blue glow effect */
+}
+/* Glow Animation */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
+}  
+#heading{
+  position: absolute;
+  top: 20px;
   text-align: center;
+  width: 100%;
+  color: #ffffff;
 }
-.card h2 {
+#auth-container {
+  width: 90%;
+  max-width: 400px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  padding: 30px;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.auth-form h2 {
+  font-size: 28px;
+  font-weight: 600;
   margin-bottom: 20px;
-  font-size: 24px;
-  color: #333;
+  color: #fff;
+  letter-spacing: 1px;
 }
-.card input[type="text"], .card input[type="password"] {
+
+.auth-form input {
   width: 100%;
-  padding: 10px;
+  padding: 12px 15px;
   margin: 10px 0;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-.card button {
-  width: 100%;
-  padding: 10px;
-  background-color: #4CAF50;
   border: none;
-  color: white;
-  border-radius: 4px;
-  cursor: pointer;
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
   font-size: 16px;
+  transition: box-shadow 0.3s ease, border 0.3s ease;
 }
-.card button:hover {
-  background-color: #45a049;
+
+.auth-form input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
 }
-.card .links {
-  margin-top: 10px;
+
+.auth-form input:focus {
+  outline: none;
+  border: 2px solid #f8f8f9;
+  box-shadow: 0 0 10px rgba(106, 17, 203, 0.5);
 }
-.card .links a {
-  color: #007BFF;
-  text-decoration: none;
-  margin: 0 5px;
+
+.auth-form button {
+  width: 100%;
+  padding: 12px 15px;
+  margin-top: 15px;
+  border: none;
+  border-radius: 25px;
+  background-color: #cba5ff;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-image 0.3s ease, transform 0.2s ease;
 }
-.card .links a:hover {
+
+.auth-form button:hover {
+  background: rgba(183, 0, 255, 0.9) ;
+  transform: scale(1.05);
+}
+
+.auth-form p {
+  margin-top: 15px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.auth-form span {
+  color: #ffffff;
+  cursor: pointer;
   text-decoration: underline;
+  font-weight: 600;
 }
+
+.auth-form span:hover {
+  color:  rgba(183, 0, 255, 0.9);
+}
+
+.hidden {
+  display: none;
+}
+
+/* Add subtle animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 480px) {
+  #auth-container {
+    padding: 20px;
+  }
+
+  .auth-form h2 {
+    font-size: 24px;
+  }
+
+  .auth-form input {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+
+  .auth-form button {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+}
+
 #startPage {
   position: fixed;
+  top: 50%; 
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 550px;
   height: 550px;
   display: flex;
@@ -113,7 +189,6 @@ body {
   justify-content: center;
   z-index: 10;
   font-size: 2rem;
-  /* background-image: linear-gradient(50deg, #FF057C 0%, #8D0B93 50%, #321575 100%); */
   background: rgba( 11, 156, 177, 0.55 );
   box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
   backdrop-filter: blur( 13.5px );
@@ -175,6 +250,61 @@ canvas {
  .backButton:hover {
   transform: scale(1.5); 
 }  
+/* General Styles */
+#subjects-container {
+  display: block;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  max-width: 600px;
+  margin: auto;
+}
+
+.subject-container {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.subject-button {
+  margin-right: 10px;
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  background: #f9f9f9;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.subject-button:hover {
+  background-color: #e2e6ea;
+  border-color: #adb5bd;
+}
+
+.youtube-icon {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.youtube-icon:hover {
+  transform: scale(1.1);
+}
+
+.backButton {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.no-subjects {
+  font-size: 16px;
+  color: #6c757d;
+  text-align: center;
+}
 
 @font-face {
   font-family: "quick"; /* Name of the font family */

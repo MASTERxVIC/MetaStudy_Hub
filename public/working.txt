@@ -45,3 +45,74 @@ function animate() {
     renderer.render(scene, camera);
 }
 animate();
+
+
+
+
+
+
+            Mathematics:
+              "https://www.youtube.com/embed/videoseries?list=PL5E6C6251D6F7ABF9",
+            Physics:
+              "https://youtube.com/playlist?list=PL3qvHcrYGy1u112gfsHycdWaLTVRt8ame&si=jSumKbyDH6BsED8B",
+            Computer_Science:
+              "https://youtube.com/@gatesmashers?si=VcG-tyO8cK0bRRXy",
+            Mathematics:
+              "https://www.youtube.com/embed/videoseries?list=PL5E6C6251D6F7ABF9",
+            Programming:
+              "https://youtu.be/DInMru2Eq6E?si=1V3ygScyRqrrmMrC",
+            Database_Systems:
+              "https://youtube.com/playlist?list=PLxCzCOWd7aiFAN6I8CuViBuCdJgiOkT2Y&si=tH9x3UFaRSWiRZ4i",
+            Computer_Science:
+              "https://youtube.com/@gatesmashers?si=VcG-tyO8cK0bRRXy",
+            Mathematics:
+              "https://www.youtube.com/embed/videoseries?list=PL5E6C6251D6F7ABF9",
+            Physics:
+              "https://youtube.com/playlist?list=PL3qvHcrYGy1u112gfsHycdWaLTVRt8ame&si=jSumKbyDH6BsED8B",
+            Pharmacology:
+              "https://youtu.be/eST-n9PlL-8?si=-Sao8w_IPmlyLKsK",
+            Pharmaceutical_Chemistry:
+              "https://youtu.be/ltG6bZULvb8?si=jivoIFWUND3HJfho",
+            Pharmacognosy:
+              "https://youtu.be/uMUWBPJu7dc?si=NBFgnq1YVYXF3uz5",
+            Pharmacy_Practice:
+              "https://youtu.be/fXGSCNJAtyU?si=km27sRgQhNptCeNQ",
+            Pharmaceutical_Chemistry:
+              "https://youtu.be/ltG6bZULvb8?si=jivoIFWUND3HJfho",
+            Pharmacognosy:
+              "https://youtu.be/uMUWBPJu7dc?si=NBFgnq1YVYXF3uz5",
+            Human_Anatomy_and_Physiology:
+              "https://youtube.com/playlist?list=PLQnNyE1lxfVJRvoH6iQ_wYFbp0yBXn1EU&si=xHiz5UcSp3cnfrBV",
+            Mechanical_Engineering:
+              "https://youtube.com/playlist?list=PLrkfOU-U6GFPC7xGK3JKfbV2-vOJXCR2r&si=pK1GT9LTHWwdiCPW",
+            Electrical_Engineering:
+              "https://youtube.com/playlist?list=PLGExcpnVQ_N_tNLRPC7urbBgu1M9Mkx5Y&si=A7KZS6ziEZ5NFaVH",
+            Civil_Engineering:
+              "https://youtube.com/playlist?list=PLrkfOU-U6GFPZAXlTbBblfLvlpqGLxX38&si=paN6-W_AET2Nbrm6",
+            Management:
+              "https://youtube.com/playlist?list=PL9Cd7H8NFRQxDwlEOu_MBT5AUoysg4NgF&si=wuzvTZJltSWR0kXy",
+            Marketing:
+              "https://youtube.com/playlist?list=PLaAhQ2ofZZRBhZEC2Oqm-vg2iMeOo1V7J&si=PB0A9Z3JNWAqvJhF",
+            Finance:
+              "https://youtube.com/playlist?list=PLaAhQ2ofZZRB3NEmEMkqoBm0QIpQkgJyK&si=f1gboTVmHwZA5ga1",
+            Physics:
+              "https://youtube.com/playlist?list=PL3qvHcrYGy1u112gfsHycdWaLTVRt8ame&si=jSumKbyDH6BsED8B",
+            Chemistry:
+              "https://youtube.com/playlist?list=PLaL8wjZt_PMwDvpt526pPkeqLgiTADN2o&si=KoihIuxV9v0UAVsx",
+            Mathematics:
+              "https://www.youtube.com/embed/videoseries?list=PL5E6C6251D6F7ABF9",
+            Biology:
+              "https://youtube.com/playlist?list=PLIdO_1ysznhfmOQ7iqN9l3yYaXmWs1Rvk&si=sGCdvid5P_opcwLX",
+            Accountancy:
+              "https://youtube.com/playlist?list=PL9Cd7H8NFRQwhTDYhhWg20m5oUaCOBZyO&si=o9KuXdrZzfl8De0Y",
+            Economics:
+              "https://youtube.com/playlist?list=PL9Cd7H8NFRQxR--HRhf9_VAF8OQWfYIC3&si=wi8KHrEB4XaOwDTq",
+            Business_Studies:
+              "https://youtube.com/playlist?list=PL9Cd7H8NFRQxDwlEOu_MBT5AUoysg4NgF&si=rkM4b1nhq3CJUHgY",
+            Law: 
+              "https://www.youtube.com/live/Iq6hjGgbJTs?si=IIhspuWJL8k2gb1V",
+            Legal_Studies:
+              "https://youtube.com/playlist?list=PLQPP9d6dj3YFyvJL5lIW3Mq6mXtjb248v&si=Pf4ZmDoXWkV8CwuY",
+            Constitutional_Law:
+              "https://youtube.com/playlist?list=PLMKElF8Q3l7yx_hM49ydEiwlqAC5cBdg6&si=u7kdcpxDK__DPdFd"
+                        

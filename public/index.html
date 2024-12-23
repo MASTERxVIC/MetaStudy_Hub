@@ -7,14 +7,25 @@
   <title>MetaStudy Hub</title>
 </head>
 <body>
-
-
-  <div id="login-container">
-    <div id="login-form">
+<div id="heading"><h1>MetaSudy Hub</h1></div>
+  <div id="auth-container">
+    <!-- Login Form -->
+    <div id="login-container" class="auth-form">
       <h2>Login</h2>
       <input type="text" id="username" placeholder="Enter Username">
       <input type="password" id="password" placeholder="Enter Password">
       <button id="login-btn">Login</button>
+      <p>Don't have an account? <span id="show-register">Register here</span></p>
+    </div>
+
+    <!-- Register Form -->
+    <div id="register-container"  class="auth-form hidden">
+      <h2>Register</h2>
+      <input type="text" id="reg-username" placeholder="Enter Username">
+      <input type="email" id="reg-email" placeholder="Enter Email">
+      <input type="password" id="reg-password" placeholder="Enter Password">
+      <button id="register-btn">Register</button>
+      <p>Already have an account? <span id="show-login">Login here</span></p>
     </div>
   </div>
 
